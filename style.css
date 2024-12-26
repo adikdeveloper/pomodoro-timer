@@ -1,0 +1,212 @@
+:root {
+    --primary: #7C3AED;
+    --primary-dark: #6D28D9;
+    --primary-light: #DDD6FE;
+    --gray-100: #F3F4F6;
+    --gray-300: #D1D5DB;
+    --gray-600: #4B5563;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #F5F3FF;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
+    width: 90%;
+    max-width: 420px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timer-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 2.5rem;
+}
+
+.progress-ring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: var(--gray-100);
+    stroke-width: 12;
+}
+
+.progress-ring-fg {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 12;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.mode-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.mode-btn {
+    background: var(--gray-100);
+    color: var(--gray-600);
+}
+
+.mode-btn:hover {
+    background: var(--gray-300);
+}
+
+.mode-btn.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.control-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.control-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.reset-btn {
+    background: var(--gray-100);
+    color: var(--gray-600);
+}
+
+.reset-btn:hover {
+    background: var(--gray-300);
+}
+
+.bx {
+    font-size: 24px;
+}
+
+.cycles {
+    text-align: center;
+    color: var(--gray-600);
+}
+
+.cycle-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary);
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulsing {
+    animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .timer-container {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .time-display {
+        font-size: 3rem;
+    }
+    
+    .btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+    }
+}

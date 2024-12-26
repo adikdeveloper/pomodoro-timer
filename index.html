@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Samarali vaqt boshqaruvi</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <main class="container">
+        <div class="timer-container">
+            <div class="progress-ring">
+                <svg class="progress-svg" viewBox="0 0 256 256">
+                    <circle class="progress-ring-bg" cx="128" cy="128" r="120" />
+                    <circle class="progress-ring-fg" cx="128" cy="128" r="120" />
+                </svg>
+                <div class="time-display" id="timeDisplay">25:00</div>
+            </div>
+        </div>
+
+        <section class="mode-buttons">
+            <button class="btn mode-btn active" data-mode="pomodoro">Ishlash</button>
+            <button class="btn mode-btn" data-mode="shortBreak">Qisqa dam</button>
+            <button class="btn mode-btn" data-mode="longBreak">Uzoq dam</button>
+        </section>
+
+        <section class="control-buttons">
+            <button class="btn control-btn" id="startBtn">
+                <i class='bx bx-play' ></i>
+            </button>
+            <button class="btn control-btn reset-btn" id="resetBtn">
+                <i class='bx bx-reset'></i>
+            </button>
+        </section>
+
+        <section class="cycles">
+            <div class="cycle-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div id="cycleText">Tugallangan sikllar: 0/4</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
